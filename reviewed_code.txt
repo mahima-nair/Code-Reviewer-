@@ -1,0 +1,24 @@
+ [
+  {
+    "description": "The 'text' variable in the input fields is not tied to any data property. It should be bound to a specific model.",
+    "pattern": "<input type=\\\"text\\\" v-model=\\\"text\\\"",
+    "replacement": "<input type=\\\"text\\\" v-model=\\\"email\\\"",
+    "condition": "email"
+  },
+  {
+    "description": "The 'password' field is using the incorrect input type and should be bound to a different model if it has one, or corrected to use the appropriate type.",
+    "pattern": "<input type=\\\"text\\\" v-model=\\\"text\\\"",
+    "replacement": "<input type=\\\"password\\\" v-model=\\\"password\\\"",
+    "condition": "password"
+  },
+  {
+    "description": "The 'required' attribute should be dynamically bound to the model, ensuring it reflects whether the field is required.",
+    "pattern": "required />",
+    "replacement": "v-bind:required=\"!!email && !!password\" />"
+  },
+  {
+    "description": "Ensure that the form data is securely handled and does not expose sensitive information directly in the URL or through query parameters.",
+    "pattern": "@submit.prevent=\\\"handleSubmit\\\"",
+    "replacement": ""
+  }
+]
